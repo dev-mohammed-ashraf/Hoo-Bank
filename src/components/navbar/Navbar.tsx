@@ -29,12 +29,12 @@ function Navbar() {
   return (
     <>
       <nav
-        className={`w-full md:w-[768px] lg:w-[1024px] xl:w-[1280px] 2xl:w-[1536px] px-8 py-7 rounded-bl-md rounded-br-md border-lightBlue ${
+        className={`w-full md:w-[768px] lg:w-[1024px] xl:w-[1280px] 2xl:w-[1536px] px-8 py-7 ${
           navBarWidth == "full"
             ? ""
-            : "md:!w-[65%] !py-4 border-b md:border border-t-0 after:bg-white/30 after:backdrop-blur-md"
+            : "md:!w-[65%] !py-4 after:border-b after:md:border after:border-lightBlue after:border-t-white/30 after:bg-white/30 after:backdrop-blur-md after:rounded-br-md after:rounded-bl-md"
         } fixed z-10 top-0 left-1/2 -translate-x-1/2 shadow-md transition-[width,padding] duration-300 flex items-center justify-between
-        after:content-[''] after:fixed after:-z-1 after:top-0 after:left-0 after:w-full after:h-full `}
+        after:content-[''] after:fixed after:-z-5 after:top-0 after:left-1/2 after:-translate-x-1/2 after:w-full after:h-full `}
       >
         <Link href="/">
           <Image
