@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+
+:root {
+  --background: #00040F;
+  --foreground: #ffffff;
+  --lightBlue: rgba(51, 187, 207, 1);
+
+  --blue-gradient: linear-gradient(157.81deg, #DEF9FA -43.27%, #BEF3F5 -21.24%, #9DEDF0 12.19%, #7DE7EB 29.82%, #5CE1E6 51.94%, #33BBCF 90.29%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-dimWhite: rgba(255, 255, 255, 0.7);
+  --color-lightBlue: var(--lightBlue);
+  --font-poppins: "poppins";
+
+  --background-image-statistics-gradient: linear-gradient(153.47deg, #fff -341.94%, #14101D 95.11%);
+  --background-image-header-gradient: linear-gradient(125.17deg, #272727 0%, #11101D 100%);
+  --background-image-bg-gradient: linear-gradient(144.39deg, #FFFFFF -278.56%, #6D6D6D -78.47%, #11101D 91.61%);
+  --background-image-blue-gradient: var(--blue-gradient);
+
+}
+
+@theme {
+  --animate-float: float 4s infinite;   
+
+  @keyframes float {                    
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
+
+
+@utility container {
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @variant md {
+    padding: 0;
+  }
+  @variant lg {
+    padding: 0 3rem;
+  }
+  @variant xl {
+    padding: 0 5rem;
+  }
+}
+
+.swiper-pagination-bullet {
+  @apply !bg-slate-300;
+}
+
+.swiper-pagination-bullet-active {
+  @apply !bg-lightBlue;
+}
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "poppins";
+
+  background-image: 
+    radial-gradient(circle at 76% 7%,rgba(51, 187, 207, 0.5), transparent 350px),
+    radial-gradient(circle at 0% 8%,rgba(51, 187, 207, 0.2), transparent 450px),
+    radial-gradient(circle at 0% 40%,rgba(51, 187, 207, 0.2), transparent 450px),
+    radial-gradient(circle at 80% 70%, rgba(51, 187, 207, 0.2), transparent 400px);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li {
+  @apply capitalize;
+}
+
+a {
+  border: none;
+  outline: none;
+}
+
+.gradient-text {
+  background: var(--blue-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.component {
+  @apply grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 items-center md:gap-12 text-start mt-20 md:mt-28;
+}
+
+.component > img {
+  @apply w-full;
+}
+
+.component > div > h3 {
+  @apply text-4xl md:text-5xl font-semibold leading-snug;
+}
+
+.component > div > p {
+  @apply text-dimWhite leading-relaxed py-8 text-base lg:text-lg;
+}
+
+.footer-links {
+  @apply col-span-2 text-lg mt-10 md:mt-0 text-center md:text-start;
+}
+
+.footer-links > h3 {
+  @apply font-medium mb-4;
+}
+
+.footer-links > ul li {
+  @apply text-dimWhite hover:text-white duration-200 text-base leading-9;
+}
+
+.footer-social {
+  @apply flex gap-8;
+}
+
+.footer-social svg {
+  @apply text-white hover:text-lightBlue duration-200;
+}
+
+
+
+
+/* For customising the dark mode colors */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+
+
+/* العرض بتاع الـ scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* الخلفية */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* الجزء اللي بيتحرك */
+::-webkit-scrollbar-thumb {
+  background: var(--lightBlue);
+  border-radius: 10px;
+}
+
+/* لما تعدي الماوس */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
